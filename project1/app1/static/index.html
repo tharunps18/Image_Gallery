@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <h1>Image Gallery</h1>
+      <div class="slider">
+        <button class="prev" onclick="change(-1)">&larr;</button>
+        <img id="display" src="01.jpg" />
+        <button class="next" onclick="change(1)">&rarr;</button>
+      </div>
+    </section>
+
+    <script>
+      const images = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"];
+      let index = 0;
+
+      function change(step) {
+        index = (index + step + images.length) % images.length;
+        document.getElementById("display").src = images[index];
+      }
+    </script>
+  </body>
+</html>
